@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="git," />
 
 
 
@@ -93,18 +93,30 @@
 
 
 
-<meta name="description" content="可能很多人已经习惯了jquery带给开发者的方便，但是我觉得熟练原生的js还是最好的 echozh 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465function createXMLHTTPRequest">
-<meta name="keywords" content="javascript">
+<meta name="description" content="以下操作均在windows环境中进行1、进入到要上传的项目目录首先我们需要进入到我们需要进行上传的目录下 2、用git命令初始化当前目录相信只要熟悉git的人都知道初始化的意义 3、配置全局的name和email（已配置过的可以跳过此步骤）  4、add要上传的文件add当前目录下的所有文件add当前目录下的单个文件 5、添加注释（个人建议不要添加中文注释） 6、将add的文件remote到原始仓">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="原生ajax">
-<meta property="og:url" content="http://echozw.github.io/2017/07/30/protogenicAjax/index.html">
+<meta property="og:title" content="git上传本地项目技巧（码云，github都可以用）">
+<meta property="og:url" content="http://echozw.github.io/2017/08/18/gittrip/index.html">
 <meta property="og:site_name" content="EchoZh">
-<meta property="og:description" content="可能很多人已经习惯了jquery带给开发者的方便，但是我觉得熟练原生的js还是最好的 echozh 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465function createXMLHTTPRequest">
+<meta property="og:description" content="以下操作均在windows环境中进行1、进入到要上传的项目目录首先我们需要进入到我们需要进行上传的目录下 2、用git命令初始化当前目录相信只要熟悉git的人都知道初始化的意义 3、配置全局的name和email（已配置过的可以跳过此步骤）  4、add要上传的文件add当前目录下的所有文件add当前目录下的单个文件 5、添加注释（个人建议不要添加中文注释） 6、将add的文件remote到原始仓">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-07-30T01:57:00.827Z">
+<meta property="og:image" content="http://echozw.github.io/2017/08/images/firstcd.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/images/gitinit.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/images/username.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/images/useremail.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/images/gitaddall.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/images/gitaddfile.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/images/gitcommit.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/images/gitremote.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/images/gitpush.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/images/gitpull.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/images/gitpullhis.png">
+<meta property="og:updated_time" content="2017-08-18T11:43:52.500Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="原生ajax">
-<meta name="twitter:description" content="可能很多人已经习惯了jquery带给开发者的方便，但是我觉得熟练原生的js还是最好的 echozh 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465function createXMLHTTPRequest">
+<meta name="twitter:title" content="git上传本地项目技巧（码云，github都可以用）">
+<meta name="twitter:description" content="以下操作均在windows环境中进行1、进入到要上传的项目目录首先我们需要进入到我们需要进行上传的目录下 2、用git命令初始化当前目录相信只要熟悉git的人都知道初始化的意义 3、配置全局的name和email（已配置过的可以跳过此步骤）  4、add要上传的文件add当前目录下的所有文件add当前目录下的单个文件 5、添加注释（个人建议不要添加中文注释） 6、将add的文件remote到原始仓">
+<meta name="twitter:image" content="http://echozw.github.io/2017/08/images/firstcd.png">
 
 
 
@@ -132,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://echozw.github.io/2017/07/30/protogenicAjax/"/>
+  <link rel="canonical" href="http://echozw.github.io/2017/08/18/gittrip/"/>
 
 
 
 
 
-  <title>原生ajax | EchoZh</title>
+  <title>git上传本地项目技巧（码云，github都可以用） | EchoZh</title>
   
 
 
@@ -286,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://echozw.github.io/2017/07/30/protogenicAjax/">
+    <link itemprop="mainEntityOfPage" href="http://echozw.github.io/2017/08/18/gittrip/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhao Hua">
@@ -303,7 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">原生ajax</h1>
+          <h1 class="post-title" itemprop="name headline">git上传本地项目技巧（码云，github都可以用）</h1>
         
 
         <div class="post-meta">
@@ -315,8 +327,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T09:36:38+08:00">
-                2017-07-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-18T18:56:43+08:00">
+                2017-08-18
               </time>
             
 
@@ -338,19 +350,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/protogenicJs/" itemprop="url" rel="index">
-                    <span itemprop="name">protogenicJs</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/protogenicJs/ajax/" itemprop="url" rel="index">
-                    <span itemprop="name">ajax</span>
+                  <a href="/categories/git-trip/" itemprop="url" rel="index">
+                    <span itemprop="name">git-trip</span>
                   </a>
                 </span>
 
@@ -383,9 +384,17 @@
       
 
       
-        <blockquote><p>可能很多人已经习惯了jquery带给开发者的方便，但是我觉得熟练原生的js还是最好的</p>
-<footer><strong>echozh</strong></footer></blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXMLHTTPRequest</span>(<span class="params"></span>) </span>&#123;     </div><div class="line">                     <span class="comment">//1.创建XMLHttpRequest对象     </span></div><div class="line">                     <span class="comment">//这是XMLHttpReuquest对象使用中最复杂的一步     </span></div><div class="line">                     <span class="comment">//需要针对IE和其他类型的浏览器建立这个对象的不同方式写不同的代码     </span></div><div class="line">                     <span class="keyword">var</span> xmlHttpRequest;  </div><div class="line">                     <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;     </div><div class="line">                         <span class="comment">//针对FireFox，Mozillar，Opera，Safari，IE7，IE8     </span></div><div class="line">                        xmlHttpRequest = <span class="keyword">new</span> XMLHttpRequest();     </div><div class="line">                         <span class="comment">//针对某些特定版本的mozillar浏览器的BUG进行修正     </span></div><div class="line">                         <span class="keyword">if</span> (xmlHttpRequest.overrideMimeType) &#123;     </div><div class="line">                             xmlHttpRequest.overrideMimeType(<span class="string">"text/xml"</span>);     </div><div class="line">                         &#125;     </div><div class="line">                     &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.ActiveXObject) &#123;     </div><div class="line">                         <span class="comment">//针对IE6，IE5.5，IE5     </span></div><div class="line">                         <span class="comment">//两个可以用于创建XMLHTTPRequest对象的控件名称，保存在一个js的数组中     </span></div><div class="line">                         <span class="comment">//排在前面的版本较新     </span></div><div class="line">                         <span class="keyword">var</span> activexName = [ <span class="string">"MSXML2.XMLHTTP"</span>, <span class="string">"Microsoft.XMLHTTP"</span> ];     </div><div class="line">                         <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; activexName.length; i++) &#123;     </div><div class="line">                             <span class="keyword">try</span> &#123;     </div><div class="line">                                 <span class="comment">//取出一个控件名进行创建，如果创建成功就终止循环     </span></div><div class="line">                                 <span class="comment">//如果创建失败，回抛出异常，然后可以继续循环，继续尝试创建     </span></div><div class="line">                                xmlHttpRequest = <span class="keyword">new</span> ActiveXObject(activexName[i]);   </div><div class="line">                                <span class="keyword">if</span>(xmlHttpRequest)&#123;  </div><div class="line">                                    <span class="keyword">break</span>;  </div><div class="line">                                &#125;  </div><div class="line">                             &#125; <span class="keyword">catch</span> (e) &#123;     </div><div class="line">                             &#125;     </div><div class="line">                         &#125;     </div><div class="line">                     &#125;     </div><div class="line">                     <span class="keyword">return</span> xmlHttpRequest;  </div><div class="line">                 &#125;     </div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">var</span> req = createXMLHTTPRequest();  </div><div class="line">    <span class="keyword">if</span>(req)&#123;  </div><div class="line">        req.open(<span class="string">"GET"</span>, <span class="string">"http://test.com/?keywords=手机"</span>, <span class="literal">true</span>);  </div><div class="line">        req.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">            <span class="keyword">if</span>(req.readyState == <span class="number">4</span>)&#123;  </div><div class="line">                <span class="keyword">if</span>(req.status == <span class="number">200</span>)&#123;  </div><div class="line">                    alert(<span class="string">"success"</span>);  </div><div class="line">                &#125;<span class="keyword">else</span>&#123;  </div><div class="line">                    alert(<span class="string">"error"</span>);  </div><div class="line">                &#125;  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">        req.send(<span class="literal">null</span>);  </div><div class="line">    &#125;  </div><div class="line">&#125; </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">post</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">var</span> req = createXMLHTTPRequest();  </div><div class="line">    <span class="keyword">if</span>(req)&#123;  </div><div class="line">        req.open(<span class="string">"POST"</span>, <span class="string">"http://test.com/"</span>, <span class="literal">true</span>);  </div><div class="line">        req.setRequestHeader(<span class="string">"Content-Type"</span>,<span class="string">"application/x-www-form-urlencoded; charset=gbk;"</span>);     </div><div class="line">        req.send(<span class="string">"keywords=手机"</span>);  </div><div class="line">        req.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">            <span class="keyword">if</span>(req.readyState == <span class="number">4</span>)&#123;  </div><div class="line">                <span class="keyword">if</span>(req.status == <span class="number">200</span>)&#123;  </div><div class="line">                    alert(<span class="string">"success"</span>);  </div><div class="line">                &#125;<span class="keyword">else</span>&#123;  </div><div class="line">                    alert(<span class="string">"error"</span>);  </div><div class="line">                &#125;  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h3 id="以下操作均在windows环境中进行"><a href="#以下操作均在windows环境中进行" class="headerlink" title="以下操作均在windows环境中进行"></a>以下操作均在windows环境中进行</h3><h3 id="1、进入到要上传的项目目录"><a href="#1、进入到要上传的项目目录" class="headerlink" title="1、进入到要上传的项目目录"></a>1、进入到要上传的项目目录</h3><p>首先我们需要进入到我们需要进行上传的目录下<br><img src="../../images/firstcd.png"></p>
+<h3 id="2、用git命令初始化当前目录"><a href="#2、用git命令初始化当前目录" class="headerlink" title="2、用git命令初始化当前目录"></a>2、用git命令初始化当前目录</h3><p>相信只要熟悉git的人都知道初始化的意义<br><img src="../../images/gitinit.png"></p>
+<h3 id="3、配置全局的name和email（已配置过的可以跳过此步骤）"><a href="#3、配置全局的name和email（已配置过的可以跳过此步骤）" class="headerlink" title="3、配置全局的name和email（已配置过的可以跳过此步骤）"></a>3、配置全局的name和email（已配置过的可以跳过此步骤）</h3><p><img src="../../images/username.png"></p>
+<p><img src="../../images/useremail.png"></p>
+<h3 id="4、add要上传的文件"><a href="#4、add要上传的文件" class="headerlink" title="4、add要上传的文件"></a>4、add要上传的文件</h3><p>add当前目录下的所有文件<br><img src="../../images/gitaddall.png"><br>add当前目录下的单个文件<br><img src="../../images/gitaddfile.png"></p>
+<h3 id="5、添加注释（个人建议不要添加中文注释）"><a href="#5、添加注释（个人建议不要添加中文注释）" class="headerlink" title="5、添加注释（个人建议不要添加中文注释）"></a>5、添加注释（个人建议不要添加中文注释）</h3><p><img src="../../images/gitcommit.png"></p>
+<h3 id="6、将add的文件remote到原始仓库"><a href="#6、将add的文件remote到原始仓库" class="headerlink" title="6、将add的文件remote到原始仓库"></a>6、将add的文件remote到原始仓库</h3><p><img src="../../images/gitremote.png"></p>
+<h3 id="7、按道理上来说的最后一步"><a href="#7、按道理上来说的最后一步" class="headerlink" title="7、按道理上来说的最后一步"></a>7、按道理上来说的最后一步</h3><p>这个步骤可能会出现错误<br><img src="../../images/gitpush.png"></p>
+<h4 id="如果有提示类似before-push-should-…-pull等字样的错误时，我们需要先将仓库的版本拉取下来"><a href="#如果有提示类似before-push-should-…-pull等字样的错误时，我们需要先将仓库的版本拉取下来" class="headerlink" title="如果有提示类似before push should ….pull等字样的错误时，我们需要先将仓库的版本拉取下来"></a>如果有提示类似before push should ….pull等字样的错误时，我们需要先将仓库的版本拉取下来</h4><p><img src="../../images/gitpull.png"></p>
+<h4 id="这时如果出现类似refuse等字样时说明历史仓库版本不同，我们可以使用"><a href="#这时如果出现类似refuse等字样时说明历史仓库版本不同，我们可以使用" class="headerlink" title="这时如果出现类似refuse等字样时说明历史仓库版本不同，我们可以使用"></a>这时如果出现类似refuse等字样时说明历史仓库版本不同，我们可以使用</h4><p><img src="../../images/gitpullhis.png">来强行合并仓库<br>最后再push一遍就ok了</p>
+
       
     </div>
 
@@ -414,7 +423,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/git/" rel="tag"># git</a>
           
         </div>
       
@@ -427,15 +436,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/08/03/npmSkill/" rel="next" title="前端开发中最常用的8个npm技巧">
+                <i class="fa fa-chevron-left"></i> 前端开发中最常用的8个npm技巧
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/30/jsClosure/" rel="prev" title="js闭包">
-                js闭包 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -516,8 +525,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -590,6 +608,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#以下操作均在windows环境中进行"><span class="nav-number">1.</span> <span class="nav-text">以下操作均在windows环境中进行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、进入到要上传的项目目录"><span class="nav-number">2.</span> <span class="nav-text">1、进入到要上传的项目目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、用git命令初始化当前目录"><span class="nav-number">3.</span> <span class="nav-text">2、用git命令初始化当前目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、配置全局的name和email（已配置过的可以跳过此步骤）"><span class="nav-number">4.</span> <span class="nav-text">3、配置全局的name和email（已配置过的可以跳过此步骤）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、add要上传的文件"><span class="nav-number">5.</span> <span class="nav-text">4、add要上传的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、添加注释（个人建议不要添加中文注释）"><span class="nav-number">6.</span> <span class="nav-text">5、添加注释（个人建议不要添加中文注释）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、将add的文件remote到原始仓库"><span class="nav-number">7.</span> <span class="nav-text">6、将add的文件remote到原始仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、按道理上来说的最后一步"><span class="nav-number">8.</span> <span class="nav-text">7、按道理上来说的最后一步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如果有提示类似before-push-should-…-pull等字样的错误时，我们需要先将仓库的版本拉取下来"><span class="nav-number">8.1.</span> <span class="nav-text">如果有提示类似before push should ….pull等字样的错误时，我们需要先将仓库的版本拉取下来</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这时如果出现类似refuse等字样时说明历史仓库版本不同，我们可以使用"><span class="nav-number">8.2.</span> <span class="nav-text">这时如果出现类似refuse等字样时说明历史仓库版本不同，我们可以使用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
