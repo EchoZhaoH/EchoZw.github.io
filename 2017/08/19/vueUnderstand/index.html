@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="unscramble," />
 
 
 
@@ -93,18 +93,21 @@
 
 
 
-<meta name="description" content="可能很多人已经习惯了jquery带给开发者的方便，但是我觉得熟练原生的js还是最好的 echozh 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465function createXMLHTTPRequest">
-<meta name="keywords" content="javascript">
+<meta name="description" content="其实对于vue我一直想写点什么，一直没时间，又一直不敢码字，生怕自己错解一些东西 echozh 说明：vue是我真正开始使用的一个前端的mvvm的框架附上一个Vue 的链接.我所希望的js的开发，就是面向对象的，而之前自己写的东西无外乎都是面向过程的，中途看过挺多的js的原型对象的讲解，但一直似懂非懂，知道接触vue之后的一段时间，才有所领会。 vue这个实例会挂载一个id，之后这个id的dom结">
+<meta name="keywords" content="unscramble">
 <meta property="og:type" content="article">
-<meta property="og:title" content="原生ajax">
-<meta property="og:url" content="http://echozw.github.io/2017/07/30/protogenicAjax/index.html">
+<meta property="og:title" content="我的解读之vue">
+<meta property="og:url" content="http://echozw.github.io/2017/08/19/vueUnderstand/index.html">
 <meta property="og:site_name" content="EchoZh">
-<meta property="og:description" content="可能很多人已经习惯了jquery带给开发者的方便，但是我觉得熟练原生的js还是最好的 echozh 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465function createXMLHTTPRequest">
+<meta property="og:description" content="其实对于vue我一直想写点什么，一直没时间，又一直不敢码字，生怕自己错解一些东西 echozh 说明：vue是我真正开始使用的一个前端的mvvm的框架附上一个Vue 的链接.我所希望的js的开发，就是面向对象的，而之前自己写的东西无外乎都是面向过程的，中途看过挺多的js的原型对象的讲解，但一直似懂非懂，知道接触vue之后的一段时间，才有所领会。 vue这个实例会挂载一个id，之后这个id的dom结">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-07-30T01:57:00.827Z">
+<meta property="og:image" content="http://echozw.github.io/2017/08/19/vueUnderstand/vuelogo.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/19/vueUnderstand/vuelife.png">
+<meta property="og:updated_time" content="2017-08-18T16:33:21.438Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="原生ajax">
-<meta name="twitter:description" content="可能很多人已经习惯了jquery带给开发者的方便，但是我觉得熟练原生的js还是最好的 echozh 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465function createXMLHTTPRequest">
+<meta name="twitter:title" content="我的解读之vue">
+<meta name="twitter:description" content="其实对于vue我一直想写点什么，一直没时间，又一直不敢码字，生怕自己错解一些东西 echozh 说明：vue是我真正开始使用的一个前端的mvvm的框架附上一个Vue 的链接.我所希望的js的开发，就是面向对象的，而之前自己写的东西无外乎都是面向过程的，中途看过挺多的js的原型对象的讲解，但一直似懂非懂，知道接触vue之后的一段时间，才有所领会。 vue这个实例会挂载一个id，之后这个id的dom结">
+<meta name="twitter:image" content="http://echozw.github.io/2017/08/19/vueUnderstand/vuelogo.png">
 
 
 
@@ -132,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://echozw.github.io/2017/07/30/protogenicAjax/"/>
+  <link rel="canonical" href="http://echozw.github.io/2017/08/19/vueUnderstand/"/>
 
 
 
 
 
-  <title>原生ajax | EchoZh</title>
+  <title>我的解读之vue | EchoZh</title>
   
 
 
@@ -286,7 +289,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://echozw.github.io/2017/07/30/protogenicAjax/">
+    <link itemprop="mainEntityOfPage" href="http://echozw.github.io/2017/08/19/vueUnderstand/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhao Hua">
@@ -303,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">原生ajax</h1>
+          <h1 class="post-title" itemprop="name headline">我的解读之vue</h1>
         
 
         <div class="post-meta">
@@ -315,8 +318,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T09:36:38+08:00">
-                2017-07-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T00:14:45+08:00">
+                2017-08-19
               </time>
             
 
@@ -338,19 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/protogenicJs/" itemprop="url" rel="index">
-                    <span itemprop="name">protogenicJs</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/protogenicJs/ajax/" itemprop="url" rel="index">
-                    <span itemprop="name">ajax</span>
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
                   </a>
                 </span>
 
@@ -383,9 +375,11 @@
       
 
       
-        <blockquote><p>可能很多人已经习惯了jquery带给开发者的方便，但是我觉得熟练原生的js还是最好的</p>
+        <blockquote><p>其实对于vue我一直想写点什么，一直没时间，又一直不敢码字，生怕自己错解一些东西</p>
 <footer><strong>echozh</strong></footer></blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXMLHTTPRequest</span>(<span class="params"></span>) </span>&#123;     </div><div class="line">                     <span class="comment">//1.创建XMLHttpRequest对象     </span></div><div class="line">                     <span class="comment">//这是XMLHttpReuquest对象使用中最复杂的一步     </span></div><div class="line">                     <span class="comment">//需要针对IE和其他类型的浏览器建立这个对象的不同方式写不同的代码     </span></div><div class="line">                     <span class="keyword">var</span> xmlHttpRequest;  </div><div class="line">                     <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;     </div><div class="line">                         <span class="comment">//针对FireFox，Mozillar，Opera，Safari，IE7，IE8     </span></div><div class="line">                        xmlHttpRequest = <span class="keyword">new</span> XMLHttpRequest();     </div><div class="line">                         <span class="comment">//针对某些特定版本的mozillar浏览器的BUG进行修正     </span></div><div class="line">                         <span class="keyword">if</span> (xmlHttpRequest.overrideMimeType) &#123;     </div><div class="line">                             xmlHttpRequest.overrideMimeType(<span class="string">"text/xml"</span>);     </div><div class="line">                         &#125;     </div><div class="line">                     &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.ActiveXObject) &#123;     </div><div class="line">                         <span class="comment">//针对IE6，IE5.5，IE5     </span></div><div class="line">                         <span class="comment">//两个可以用于创建XMLHTTPRequest对象的控件名称，保存在一个js的数组中     </span></div><div class="line">                         <span class="comment">//排在前面的版本较新     </span></div><div class="line">                         <span class="keyword">var</span> activexName = [ <span class="string">"MSXML2.XMLHTTP"</span>, <span class="string">"Microsoft.XMLHTTP"</span> ];     </div><div class="line">                         <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; activexName.length; i++) &#123;     </div><div class="line">                             <span class="keyword">try</span> &#123;     </div><div class="line">                                 <span class="comment">//取出一个控件名进行创建，如果创建成功就终止循环     </span></div><div class="line">                                 <span class="comment">//如果创建失败，回抛出异常，然后可以继续循环，继续尝试创建     </span></div><div class="line">                                xmlHttpRequest = <span class="keyword">new</span> ActiveXObject(activexName[i]);   </div><div class="line">                                <span class="keyword">if</span>(xmlHttpRequest)&#123;  </div><div class="line">                                    <span class="keyword">break</span>;  </div><div class="line">                                &#125;  </div><div class="line">                             &#125; <span class="keyword">catch</span> (e) &#123;     </div><div class="line">                             &#125;     </div><div class="line">                         &#125;     </div><div class="line">                     &#125;     </div><div class="line">                     <span class="keyword">return</span> xmlHttpRequest;  </div><div class="line">                 &#125;     </div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">var</span> req = createXMLHTTPRequest();  </div><div class="line">    <span class="keyword">if</span>(req)&#123;  </div><div class="line">        req.open(<span class="string">"GET"</span>, <span class="string">"http://test.com/?keywords=手机"</span>, <span class="literal">true</span>);  </div><div class="line">        req.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">            <span class="keyword">if</span>(req.readyState == <span class="number">4</span>)&#123;  </div><div class="line">                <span class="keyword">if</span>(req.status == <span class="number">200</span>)&#123;  </div><div class="line">                    alert(<span class="string">"success"</span>);  </div><div class="line">                &#125;<span class="keyword">else</span>&#123;  </div><div class="line">                    alert(<span class="string">"error"</span>);  </div><div class="line">                &#125;  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">        req.send(<span class="literal">null</span>);  </div><div class="line">    &#125;  </div><div class="line">&#125; </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">post</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">var</span> req = createXMLHTTPRequest();  </div><div class="line">    <span class="keyword">if</span>(req)&#123;  </div><div class="line">        req.open(<span class="string">"POST"</span>, <span class="string">"http://test.com/"</span>, <span class="literal">true</span>);  </div><div class="line">        req.setRequestHeader(<span class="string">"Content-Type"</span>,<span class="string">"application/x-www-form-urlencoded; charset=gbk;"</span>);     </div><div class="line">        req.send(<span class="string">"keywords=手机"</span>);  </div><div class="line">        req.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">            <span class="keyword">if</span>(req.readyState == <span class="number">4</span>)&#123;  </div><div class="line">                <span class="keyword">if</span>(req.status == <span class="number">200</span>)&#123;  </div><div class="line">                    alert(<span class="string">"success"</span>);  </div><div class="line">                &#125;<span class="keyword">else</span>&#123;  </div><div class="line">                    alert(<span class="string">"error"</span>);  </div><div class="line">                &#125;  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>说明：vue是我真正开始使用的一个前端的mvvm的框架<br>附上一个<a href="https://cn.vuejs.org/" title="官网" target="_blank" rel="external">Vue</a> 的链接.<br><img src="/2017/08/19/vueUnderstand/vuelogo.png" alt="vuelogo.png" title=""><br>我所希望的js的开发，就是面向对象的，而之前自己写的东西无外乎都是面向过程的，中途看过挺多的js的原型对象的讲解，但一直似懂非懂，<br>知道接触vue之后的一段时间，才有所领会。</p>
+<p>vue这个实例会挂载一个id，之后这个id的dom结构里面的所有操作都会在vue这个实例中进行，说到这就不得不贴出一张vue的生命周期的钩子图了<br><img src="/2017/08/19/vueUnderstand/vuelife.png" alt="vue生命周期图" title="vue生命周期图"><br>在这个生命周期中我们就可以实现我们所有的操作，dom的改变，数据的渲染。（突然词穷，想到再写吧，下次写点干货吧）</p>
+
       
     </div>
 
@@ -414,7 +408,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/unscramble/" rel="tag"># unscramble</a>
           
         </div>
       
@@ -427,15 +421,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/08/18/hexopicstor/" rel="next" title="hexo博文中插入图片存储的路径">
+                <i class="fa fa-chevron-left"></i> hexo博文中插入图片存储的路径
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/30/jsClosure/" rel="prev" title="js闭包">
-                js闭包 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
