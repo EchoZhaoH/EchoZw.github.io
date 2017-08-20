@@ -96,16 +96,20 @@
 <meta name="description" content="其实对于vue我一直想写点什么，一直没时间，又一直不敢码字，生怕自己错解一些东西 echozh 说明：vue是我真正开始使用的一个前端的mvvm的框架附上一个Vue 的链接.我所希望的js的开发，就是面向对象的，而之前自己写的东西无外乎都是面向过程的，中途看过挺多的js的原型对象的讲解，但一直似懂非懂，知道接触vue之后的一段时间，才有所领会。 vue这个实例会挂载一个id，之后这个id的dom结">
 <meta name="keywords" content="unscramble">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的解读之vue">
+<meta property="og:title" content="我的解读之简述vue生命周期created、mounted(vue-1)">
 <meta property="og:url" content="http://echozw.github.io/2017/08/19/vueUnderstand/index.html">
 <meta property="og:site_name" content="EchoZh">
 <meta property="og:description" content="其实对于vue我一直想写点什么，一直没时间，又一直不敢码字，生怕自己错解一些东西 echozh 说明：vue是我真正开始使用的一个前端的mvvm的框架附上一个Vue 的链接.我所希望的js的开发，就是面向对象的，而之前自己写的东西无外乎都是面向过程的，中途看过挺多的js的原型对象的讲解，但一直似懂非懂，知道接触vue之后的一段时间，才有所领会。 vue这个实例会挂载一个id，之后这个id的dom结">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://echozw.github.io/2017/08/19/vueUnderstand/vuelogo.png">
 <meta property="og:image" content="http://echozw.github.io/2017/08/19/vueUnderstand/vuelife.png">
-<meta property="og:updated_time" content="2017-08-18T16:33:21.438Z">
+<meta property="og:image" content="http://echozw.github.io/2017/08/19/vueUnderstand/created.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/19/vueUnderstand/mountedvdom.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/19/vueUnderstand/mountedvdom.png">
+<meta property="og:image" content="http://echozw.github.io/2017/08/19/vueUnderstand/createddom.png">
+<meta property="og:updated_time" content="2017-08-20T13:15:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的解读之vue">
+<meta name="twitter:title" content="我的解读之简述vue生命周期created、mounted(vue-1)">
 <meta name="twitter:description" content="其实对于vue我一直想写点什么，一直没时间，又一直不敢码字，生怕自己错解一些东西 echozh 说明：vue是我真正开始使用的一个前端的mvvm的框架附上一个Vue 的链接.我所希望的js的开发，就是面向对象的，而之前自己写的东西无外乎都是面向过程的，中途看过挺多的js的原型对象的讲解，但一直似懂非懂，知道接触vue之后的一段时间，才有所领会。 vue这个实例会挂载一个id，之后这个id的dom结">
 <meta name="twitter:image" content="http://echozw.github.io/2017/08/19/vueUnderstand/vuelogo.png">
 
@@ -141,7 +145,7 @@
 
 
 
-  <title>我的解读之vue | EchoZh</title>
+  <title>我的解读之简述vue生命周期created、mounted(vue-1) | EchoZh</title>
   
 
 
@@ -306,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">我的解读之vue</h1>
+          <h1 class="post-title" itemprop="name headline">我的解读之简述vue生命周期created、mounted(vue-1)</h1>
         
 
         <div class="post-meta">
@@ -378,7 +382,19 @@
         <blockquote><p>其实对于vue我一直想写点什么，一直没时间，又一直不敢码字，生怕自己错解一些东西</p>
 <footer><strong>echozh</strong></footer></blockquote>
 <p>说明：vue是我真正开始使用的一个前端的mvvm的框架<br>附上一个<a href="https://cn.vuejs.org/" title="官网" target="_blank" rel="external">Vue</a> 的链接.<br><img src="/2017/08/19/vueUnderstand/vuelogo.png" alt="vuelogo.png" title=""><br>我所希望的js的开发，就是面向对象的，而之前自己写的东西无外乎都是面向过程的，中途看过挺多的js的原型对象的讲解，但一直似懂非懂，<br>知道接触vue之后的一段时间，才有所领会。</p>
-<p>vue这个实例会挂载一个id，之后这个id的dom结构里面的所有操作都会在vue这个实例中进行，说到这就不得不贴出一张vue的生命周期的钩子图了<br><img src="/2017/08/19/vueUnderstand/vuelife.png" alt="vue生命周期图" title="vue生命周期图"><br>在这个生命周期中我们就可以实现我们所有的操作，dom的改变，数据的渲染。（突然词穷，想到再写吧，下次写点干货吧）</p>
+<p>vue这个实例会挂载一个id，之后这个id的dom结构里面的所有操作都会在vue这个实例中进行，说到这就不得不贴出一张vue的生命周期的钩子图了<br><img src="/2017/08/19/vueUnderstand/vuelife.png" alt="vue生命周期图" title="vue生命周期图"><br>在这个生命周期中我们就可以实现我们所有的操作，dom的改变，数据的渲染。</p>
+<h3 id="我觉得第一个需要了解的Vue实例的生命周期"><a href="#我觉得第一个需要了解的Vue实例的生命周期" class="headerlink" title="我觉得第一个需要了解的Vue实例的生命周期"></a>我觉得第一个需要了解的Vue实例的生命周期</h3><p>(就我自己的一点看法，各位如果有更好的理解，欢迎随时交流)<br>写下几个我觉得新手比较需要的钩子<br><strong>1、created</strong></p>
+<ul>
+<li><strong>类型 ：</strong><code>Function</code></li>
+<li><strong>详细 ：</strong><br>  实例已经创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测(data observer)，属性和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，<code>$el</code>属性目前不可见</li>
+<li><strong>我的理解 ：</strong><br>  这个时候我们可以准备我们所需要渲染到<strong>dom的数据</strong>，例如一些ajax的请求，但是这时Vue的虚拟dom还没挂载完成，<code>$el</code>无法访问，可以看下，下面的示例。  <img src="/2017/08/19/vueUnderstand/created.png" alt="vue实例created阶段" title="vue实例created阶段">
+  至于<code>$el</code>个人理解是vue的虚拟dom，会与实际dom的双向绑定。(或许有人会说现在我的dom既然可以拿到，为啥还要这么麻烦等待vue呢，对这样做是可以，但是那为啥还要使用vue，不就是为了更好的管理数据与dom吗，个人理解，不喜勿喷)。<br><strong>2、mounted</strong></li>
+<li><strong>类型 ：</strong><code>Function</code></li>
+<li><strong>详细 ：</strong><br>  <code>el</code>被新创建的<code>vm.$el</code>替换，并挂载到实例上去之后调用该钩子。如果<code>root</code>实例挂载了一个文档内元素，当<code>mounted</code>被调用时<code>vm.$el</code>也在文档内。</li>
+<li><strong>我的理解 ：</strong><br>  此时vue的虚拟dom已经完成，实际dom的绑定也已结束，至此我们可以使用vue实例对挂载点内的dom做任何操作，<br>  可以看以下示例：  <img src="/2017/08/19/vueUnderstand/mountedvdom.png" alt="vue实例mounted虚拟dom阶段" title="vue实例mounted虚拟dom阶段">
+  我们可以比较下他与实际dom之间的区别  <img src="/2017/08/19/vueUnderstand/mountedvdom.png" alt="vue实例mounted虚拟dom阶段" title="vue实例mounted虚拟dom阶段"> <img src="/2017/08/19/vueUnderstand/createddom.png" alt="vue实例created dom阶段" title="vue实例created dom阶段">
+<strong>以上内容纯属个人理解</strong></li>
+</ul>
 
       
     </div>
@@ -483,8 +499,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -557,6 +582,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#我觉得第一个需要了解的Vue实例的生命周期"><span class="nav-number">1.</span> <span class="nav-text">我觉得第一个需要了解的Vue实例的生命周期</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
