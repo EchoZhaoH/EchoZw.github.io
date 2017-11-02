@@ -10,8 +10,8 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script> <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style> .pace .pace-progress { background: #1E92FB; /*进度条颜色*/ height: 3px; } .pace .pace-progress-inner { box-shadow: 0 0 10px #1E92FB, 0 0 5px #1E92FB; /*阴影颜色*/ } .pace .pace-activity { border-top-color: #1E92FB; /*上边框颜色*/ border-left-color: #1E92FB; /*左边框颜色*/ } </style>
 
 
 
@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="EchoZh">
 <meta property="og:description" content="可能很多人已经习惯了jquery带给开发者的方便，但是我觉得熟练原生的js还是最好的 echozh ajax的原生写法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465function createXMLHT">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-20T09:20:49.412Z">
+<meta property="og:updated_time" content="2017-11-02T14:10:31.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原生ajax">
 <meta name="twitter:description" content="可能很多人已经习惯了jquery带给开发者的方便，但是我觉得熟练原生的js还是最好的 echozh ajax的原生写法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465function createXMLHT">
@@ -372,6 +372,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  337
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
           
 
@@ -390,7 +421,11 @@
 <h3 id="ajax的原生写法"><a href="#ajax的原生写法" class="headerlink" title="ajax的原生写法"></a>ajax的原生写法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXMLHTTPRequest</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//1.创建XMLHttpRequest对象</span></div><div class="line">    <span class="comment">//这是XMLHttpReuquest对象使用中最复杂的一步</span></div><div class="line">    <span class="comment">//需要针对IE和其他类型的浏览器建立这个对象的不同方式写不同的代码</span></div><div class="line">    <span class="keyword">var</span> xmlHttpRequest;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;</div><div class="line">        <span class="comment">//针对FireFox，Mozillar，Opera，Safari，IE7，IE8</span></div><div class="line">            xmlHttpRequest = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">            <span class="comment">//针对某些特定版本的mozillar浏览器的BUG进行修正</span></div><div class="line">            <span class="keyword">if</span> (xmlHttpRequest.overrideMimeType) &#123;</div><div class="line">                mlHttpRequest.overrideMimeType(<span class="string">"text/xml"</span>); </div><div class="line">            &#125;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.ActiveXObject) &#123;</div><div class="line">        <span class="comment">//针对IE6，IE5.5，IE5</span></div><div class="line">        <span class="comment">//两个可以用于创建XMLHTTPRequest对象的控件名称，保存在一个js的数组中</span></div><div class="line">        <span class="comment">//排在前面的版本较新</span></div><div class="line">        <span class="keyword">var</span> activexName = [ <span class="string">"MSXML2.XMLHTTP"</span>, <span class="string">"Microsoft.XMLHTTP"</span> ];</div><div class="line">        <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; activexName.length; i++) &#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="comment">//取出一个控件名进行创建，如果创建成功就终止循环</span></div><div class="line">                <span class="comment">//如果创建失败，回抛出异常，然后可以继续循环，继续尝试创建</span></div><div class="line">                xmlHttpRequest = <span class="keyword">new</span> ActiveXObject(activexName[i]);</div><div class="line">                <span class="keyword">if</span>(xmlHttpRequest)&#123;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">            &#125;</div><div class="line">        &#125; </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> xmlHttpRequest;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> req = createXMLHTTPRequest();</div><div class="line">    <span class="keyword">if</span>(req)&#123;</div><div class="line">        req.open(<span class="string">"GET"</span>, <span class="string">"http://test.com/?keywords=手机"</span>, <span class="literal">true</span>);</div><div class="line">        req.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span>(req.readyState == <span class="number">4</span>)&#123;</div><div class="line">                <span class="keyword">if</span>(req.status == <span class="number">200</span>)&#123;</div><div class="line">                    alert(<span class="string">"success"</span>);</div><div class="line">                &#125;<span class="keyword">else</span>&#123;</div><div class="line">                    alert(<span class="string">"error"</span>);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        req.send(<span class="literal">null</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">post</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> req = createXMLHTTPRequest();</div><div class="line">    <span class="keyword">if</span>(req)&#123;</div><div class="line">        req.open(<span class="string">"POST"</span>, <span class="string">"http://test.com/"</span>, <span class="literal">true</span>);</div><div class="line">        req.setRequestHeader(<span class="string">"Content-Type"</span>,<span class="string">"application/x-www-form-urlencoded; charset=gbk;"</span>);</div><div class="line">        req.send(<span class="string">"keywords=手机"</span>);</div><div class="line">        req.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span>(req.readyState == <span class="number">4</span>)&#123;</div><div class="line">                <span class="keyword">if</span>(req.status == <span class="number">200</span>)&#123; </div><div class="line">                    alert(<span class="string">"success"</span>);</div><div class="line">                &#125;<span class="keyword">else</span>&#123;</div><div class="line">                    alert(<span class="string">"error"</span>);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
-
+    <div>
+      
+         <div class="my_post_copyright"> <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script> <!-- JS库 sweetalert 可修改路径 --> <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script> <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css"> <p><span>本文标题:</span><a href="/2017/07/30/ajax/">原生ajax</a></p> <p><span>文章作者:</span><a href="/" title="访问 Zhao Hua 的个人博客">Zhao Hua</a></p> <p><span>发布时间:</span>2017年07月30日 - 09:07</p> <p><span>最后更新:</span>2017年11月02日 - 22:11</p> <p><span>原始链接:</span><a href="/2017/07/30/ajax/" title="原生ajax">http://echozw.github.io/2017/07/30/ajax/</a> <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://echozw.github.io/2017/07/30/ajax/" aria-label="复制成功！"></i></span> </p> <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p> </div> <script> var clipboard = new Clipboard('.fa-clipboard'); clipboard.on('success', $(function(){ $(".fa-clipboard").click(function(){ swal({ title: "", text: '复制成功', html: false, timer: 500, showConfirmButton: false }); }); })); </script> 
+      
+    </div>
     <div>
       
         
@@ -455,6 +490,29 @@
 
 
     <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
       
     </div>
   </div>
@@ -611,7 +669,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
   
   &copy; 
   <span itemprop="copyrightYear">2017</span>
@@ -622,6 +681,7 @@
 </div>
 
 
+<div class="powered-by"> <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv"> 本站访客数:<span id="busuanzi_value_site_uv"></span> </span> </div>
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
@@ -634,6 +694,10 @@
 </div>
 
 
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共4.2k字</span>
+</div>
         
 
         
