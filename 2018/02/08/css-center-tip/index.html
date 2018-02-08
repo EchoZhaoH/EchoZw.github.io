@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="EchoZh">
 <meta property="og:description" content="水平居中     .parent {         text-align: center;     }     .child {         display: inline-block;     }      .child {         display: table;         margin: 0 auto;     }        .parent {          pos">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-08T05:50:10.355Z">
+<meta property="og:updated_time" content="2018-02-08T05:51:53.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css居中技巧">
 <meta name="twitter:description" content="水平居中     .parent {         text-align: center;     }     .child {         display: inline-block;     }      .child {         display: table;         margin: 0 auto;     }        .parent {          pos">
@@ -461,21 +461,20 @@
       display: inline-block;
   }
 </code></pre>
+<pre><code>
+  .parent {
+      position: relative;
+  }
+  .child {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+</code></pre>
 
 </li>
 </ul>
-<pre><code>
-    .parent {
-        position: relative;
-    }
-    .child {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-</code></pre>
-
 <h3 id="全能的flex"><a href="#全能的flex" class="headerlink" title="全能的flex"></a>全能的flex</h3><pre><code>
     .parent {
         display: flex;
