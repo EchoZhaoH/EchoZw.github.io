@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://echozw.github.io/"/>
-  <updated>2017-12-19T07:42:03.545Z</updated>
+  <updated>2018-02-08T05:50:10.355Z</updated>
   <id>http://echozw.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>css居中技巧</title>
+    <link href="http://echozw.github.io/2018/02/08/css-center-tip/"/>
+    <id>http://echozw.github.io/2018/02/08/css-center-tip/</id>
+    <published>2018-02-08T05:18:51.000Z</published>
+    <updated>2018-02-08T05:50:10.355Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><pre><code>    .parent {        text-align: center;    }    .child {        display: inline-block;    }    .child {        display: table;        margin: 0 auto;    }</code></pre><pre><code>    .parent {         position: relative;    }    .child {        position: absolute;        left: 50%;        transform: translateX(-50%);    }</code></pre><h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><ul><li><code>table-cell</code>配和<code>vertical-align</code><pre><code>  .parent {      display: table-cell;      vertical-align: middle;  }</code></pre></li><li><code>absolute</code>配合<code>transform</code><pre><code>  .parent {      position: relative;  }  .child {      position: absolute;      top: 50%;      transform: translateY(-50%);  }</code></pre></li></ul><h3 id="水平-垂直居中"><a href="#水平-垂直居中" class="headerlink" title="水平+垂直居中"></a>水平+垂直居中</h3><ul><li><code>inline-block</code>配合<code>text-align</code>加上<code>table-cell</code>配合<code>vertical-align</code><pre><code>  .parent {      display: table-cell;      vertical-align: middle;      text-align: center;  }  .child {      display: inline-block;  }</code></pre></li></ul><pre><code>    .parent {        position: relative;    }    .child {        position: absolute;        top: 50%;        left: 50%;        transform: translate(-50%, -50%);    }</code></pre><h3 id="全能的flex"><a href="#全能的flex" class="headerlink" title="全能的flex"></a>全能的flex</h3><pre><code>    .parent {        display: flex;        justify-content: center;    }</code></pre><pre><code>    .parent {        display: flex;        align-item: center;    }</code></pre><pre><code>    .parent {        display: flex;        justify-content: center;        align-item: center;    }</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;水平居中&quot;&gt;&lt;a href=&quot;#水平居中&quot; class=&quot;headerlink&quot; title=&quot;水平居中&quot;&gt;&lt;/a&gt;水平居中&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;
+    .parent {
+        text-align: center;
+    }
+    .
+      
+    
+    </summary>
+    
+      <category term="css-tips" scheme="http://echozw.github.io/categories/css-tips/"/>
+    
+    
+      <category term="css" scheme="http://echozw.github.io/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>趣味解读js中的call和apply</title>
