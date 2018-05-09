@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[css居中技巧]]></title>
+    <url>%2F2018%2F02%2F08%2Fcss-center-tip%2F</url>
+    <content type="text"><![CDATA[水平居中 .parent { text-align: center; } .child { display: inline-block; } .child { display: table; margin: 0 auto; } .parent { position: relative; } .child { position: absolute; left: 50%; transform: translateX(-50%); } 垂直居中 table-cell配和vertical-align .parent { display: table-cell; vertical-align: middle; } absolute配合transform .parent { position: relative; } .child { position: absolute; top: 50%; transform: translateY(-50%); } 水平+垂直居中 inline-block配合text-align加上table-cell配合vertical-align .parent { display: table-cell; vertical-align: middle; text-align: center; } .child { display: inline-block; } .parent { position: relative; } .child { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } 全能的flex .parent { display: flex; justify-content: center; } .parent { display: flex; align-item: center; } .parent { display: flex; justify-content: center; align-item: center; }]]></content>
+      <categories>
+        <category>css-tips</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[趣味解读js中的call和apply]]></title>
+    <url>%2F2017%2F12%2F19%2Ffnc-call-apply%2F</url>
+    <content type="text"><![CDATA[函数调用的前世今生先来讲一个故事啊，从前有个叫函数的小孩，孩子还小嘛，长得挺精致，天性活泼，什么都敢说，什么都敢玩，这个时候的函数长这样 fnc.call() 或者 这样 fnc.apply(),这个时候的函数特别单纯别人想看什么，他就给别人看什么，这个时候的函数调用是这样的 fnc.call(window, param1, param2,…) &amp; fnc.apply(window, params)window -&gt; 外界环境的影响（也就是我们所说的作用域） 至于这个 param1,param2,.. &amp; params 就是外界传授给小孩的知识 （也就是我们的参数） 然后。。。。。n多年之后，函数长大了，人情事故变的更加圆润，性格变得内敛，然后函数就长成了这样fnc(param1,param2,…) &amp; fnc(params)他隐藏了外界的影响，导致人们再也看不到他的内心的想法，也无法改变它内心的想法，于是，作用域就变的难以掌控 function () { this // 我的天这个this代表什么啊，来位大神讲下啊 }于是刚入门的小白或者新手就对this，产生了莫名的恐惧，比如下面这种情况 嗯，‘元芳，你怎么看’，哦，不是，我们来看下他们两个为什么结果不一样呢，首先我们肯定是先分析this.name既然name的值在第一个函数中为空，那我们就来看下this吧，于是就有了以下代码现在我们是不是如同恍然大梦呢，原来是this变了，window里面99%没有name这个属性啊（免不了有人跟我抬杠）,然后肯定就为空了，嗯，现在让我们回头看下小时候的函数吧 fnc.call() &amp; fnc.apply() 终于想起来这个了，我们就倒流时间回到函数小时候，用小时候的函数解决这个问题，哈哈，是不是很聪明 于是我们有了以下代码 回到正题，我们讲解下call 和 apply的用法 call apply的最终目的是一样的call和apply的目的都是在运行函数时，指定函数的作用域（也就是this,this与作用域是紧密相连的）,call是明确参数个数和参数个数较少时使用，apply是不明确参数个数和参数个数较多时使用 用法 function Person () {this.name = &apos;hank&apos;; } var person = new Person(); function sayhello() {// 此时我们肯定是没有name的，毕竟name是person的啊 console.log(this.name + &apos; say hello&apos;); } // 但是，我们需要name啊，怎么办，只能借呗 sayhello.call(person) : hank say helloapply 用法同call注意： 最后再给新手一个建议，在你写代码的初期，尽量使用这种方式fnc.call() 和 fnc.apply() 来 替代 fnc()的函数调用的方式]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[H5 media标签获取多媒体对象问题]]></title>
+    <url>%2F2017%2F12%2F19%2Fh5media%2F</url>
+    <content type="text"><![CDATA[获取媒体对象的方式 创建媒体对象var media = document.createElement(media)现在我们已经可以拿到媒体对象了，但是要获取详细信息需等到媒体播放时我们才能拿到，这也是我们做一些视频或者音频上传时获取上传的媒体对象常用的做法。 获取媒体对象看到网上很多人都说用loadstart事件获取媒体对象，经过亲身实践确实可以，但是当视频或者音频播放有网络延迟时，我们是拿不到对象的所有信息的，而使用canplay事件我们可以拿到对象的所有信息。 笔记。]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>H5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[cordova打包vue项目]]></title>
+    <url>%2F2017%2F10%2F05%2Fcordova-vue%2F</url>
+    <content type="text"><![CDATA[现在国内已经越来越多的使用vue进行混合app的开发，但是将vue项目打包成一个可安装的android apk文件却不是每个人都知道，在此记录下，方便以后自己使用。 echozh 准备资源我们需要node、npm、android SDK的环境支持在此就不进行node和npm的安装演示了。在这里提供一个android SDK的安装装程序的百度网盘android SDK 的链接，密码：1hvk。也可以在官网上下载。 第一步crodova的安装如果已经安装可以跳过全局安装npm install -g cordova 第二步新建crodova项目cmd下执行命令 cordova create cordovaApp com.cordova.testapp cd cordovaApp cordova platform add android cordovaApp为项目名称 第三部修改vue项目如果没有，可以百度进行创建 首先修改vue项目的index.html文件在head之间加入 &lt;meta http-equiv=”Content-Security-Policy” content=”default-src ‘self’ data: gap: https://ssl.gstatic.com ‘unsafe-eval’; style-src ‘self’ ‘unsafe-inline’; media-src ; img-src ‘self’ data: content:;”&gt; &lt;meta name=”format-detection” content=”telephone=no”&gt; &lt;meta name=”msapplication-tap-highlight” content=”no”&gt; &lt;meta name=”viewport” content=”user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width”&gt;加入的&lt;meta http-equiv=”Content-Security-Policy” content=”default-src ‘self’ data: gap: https://ssl.gstatic.com ‘unsafe-eval’; style-src ‘self’ ‘unsafe-inline’; media-src ; img-src ‘self’ data: content:;”&gt;有可能会改变页面样式的改变，如果改变则不要加，否则一定要加然后引入cordova.js &lt;body&gt; &lt;div id=”app”&gt;&lt;/div&gt; &lt;script type=”text/javascript” src=”cordova.js”&gt;&lt;/script&gt; &lt;!– built files will be auto injected –&gt; &lt;/body&gt;新加入的cordova.js在浏览器运行时会报错，这个到时候当你打包成apk文件在手机上运行就不会报错了然后修改src中的main.js为以下代码 // The Vue build version to load with the import command // (runtime-only or standalone) has been set in webpack.base.conf with an alias. import Vue from ‘vue’ import App from ‘./App’ import router from ‘./router’ Vue.config.productionTip = false / eslint-disable no-new / document.addEventListener(‘deviceready’, function() { new Vue({ el: &apos;#app&apos;, router, store, template: &apos;&lt;App/&gt;&apos;, components: { App } }) window.navigator.splashscreen.hide() }, false);最后修改config文件夹中的index.js文件修改build模块中的 assetsSubDirectory: ‘static’, assetsPublicPath: ‘/‘,修改为 assetsSubDirectory: ‘’, assetsPublicPath: ‘’,然后运行npm run dev如果能够正常运行，说明没有问题 第四步将打包好的vue文件放到cordova项目中进行打包执行命令npm run build执行完成后会生成一个dist文件夹，找到这个文件夹将里面的所有文件复制到你的cordova项目的www文件夹下替换它原有的文件。然后就可以执行cordova build android会生成一个可执行的apk文件，安装即可。生成的apk文件在我们的项目路径下cordovaApp\platforms\android\build\outputs\apk\android-debug.apk到这里就完成了我们vue项目的打包。 需注意当执行cordova build android命令时可能会出错，若出错请检查你的android SDK是否安装成功以及环境是否配置成功]]></content>
+      <categories>
+        <category>移动端</category>
+      </categories>
+      <tags>
+        <tag>crodova</tag>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jstools-LazyMan]]></title>
+    <url>%2F2017%2F09%2F02%2Fjstools-LazyMan%2F</url>
+    <content type="text"><![CDATA[一个意外这个是我一次在饥人谷的知乎专栏看到的感觉挺好玩的就是这实现了下，中间也看过方方老师的讲解（至于用Promise，暂时还不太会） 还是直接贴代码吧，我实现过程中就是把一系列的链式调用看作为一个一个的指令，当叫到哪个指令时就把哪个指令压入到栈中然后再从栈中取出执行 代码实施过程 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657 function LayzMan(name) &#123; let queue = [] let task = &#123; wait: function(second)&#123; return function() &#123; setTimeout(() =&gt; &#123; console.log(`Wake up after $&#123;second&#125;`) next() &#125;,second*1000) &#125; &#125;, eat: function(food) &#123; return function() &#123; console.log(`Eat $&#123;food&#125;~`) next() &#125; &#125;, hi: function(name) &#123; return function() &#123; console.log(`Hi! This is $&#123;name&#125;!`) next() &#125; &#125; &#125; queue.push(task.hi(name)) function next()&#123; let fn = queue.shift() fn &amp;&amp; fn() &#125; // 异步来达到效果 setTimeout(() =&gt; &#123; next() &#125;,0) let api = &#123; sleep: function(second) &#123; queue.push(task.wait(second)) return this &#125;, sleepFirst: function(second) &#123; queue.unshift(task.wait(second)) return this &#125;, eat: function(food) &#123; queue.push(task.eat(food)) return this &#125; &#125; return api&#125;//LayzMan('Hank')//LayzMan('Hank').sleep(3).eat('dinner')//LayzMan('Hank').eat('dinner').eat('supper')//LayzMan('Hank').sleepFirst(3).eat('supper') 最后大家有更好的想法的话可以和我沟通，欢迎随时交流我的QQ ： 572712675微信欢迎扫我]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>工具函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[用原生js实现一个简单的flatten]]></title>
+    <url>%2F2017%2F09%2F02%2Fjstools-flatten%2F</url>
+    <content type="text"><![CDATA[需求实现一个flatten函数，将一个嵌套多层的数组 array（数组） (嵌套可以是任何层数)转换为只有一层的数组，数组中元素仅基本类型的元素或数组，不存在循环引用的情况。Ex: flatten([1, [2], [3, [[4]]]]) =&gt; [1, 2, 3, 4]; 实现过程及想法我拿到这个题目的第一眼就想到循环和递归，因为除了这种方法也没想出其他的方法，当然实现的过程中遇到点困惑初步思路12345678var flatten = function (input) &#123; // 首先我们需要判断input是否为数组 if(typeof input === 'Array')&#123; .... &#125;else&#123; return input &#125;&#125;遇到的第一个问题typeof input === ‘Array’无法判断input是Array型解决方案利用对象的prototype来做判断,也可以用constructor1234567function isArray (input) &#123; if (Object.prototype.toString.call(input) === '[object Array]') &#123; return true &#125;else&#123; return false &#125;&#125;初成的第一版输出结果代码实施过程123456789101112131415161718192021222324252627var flatten = function(input) &#123; if (isArray(input))&#123; var output = [] for(var i = 0; i &lt; input.length; i++)&#123; var value = input[i] if(isArray(input[i])) &#123; flatten(input[i]) &#125; else&#123; output.push(value) &#125; &#125; return output &#125;else &#123; return input; &#125;&#125;function isArray (input) &#123; if (Object.prototype.toString.call(input) === '[object Array]') &#123; return true &#125;else&#123; return false &#125;&#125;console.log(flatten([1,2,3,[7,[[8,9],10],[18,[545]]]]))后来我查找的时候发现output是一只被初始化的就相当于只保存了第一次的结果修改后的第二版既然是作用域的问题，那我把output作为参数传进去，提升output的作用域不就行了吗 代码实施过程1234567891011121314151617181920212223242526 var flatten = function(input, output) &#123; if (isArray(input))&#123; for(var i = 0; i &lt; input.length; i++)&#123; var value = input[i] if(isArray(input[i])) &#123; flatten(input[i], output) &#125; else&#123; output.push(value) &#125; &#125; return output &#125;else &#123; return input; &#125;&#125; function isArray (input) &#123; if (Object.prototype.toString.call(input) === '[object Array]') &#123; return true &#125;else&#123; return false &#125; &#125; var b = [] console.log(flatten([1,2,3,[7,[[8,9],10],[18,[545]]]],b))运行结果而运行结果也是我们想要的但是这样实施感觉有点繁琐，别人只需要调你的函数来执行这个过程而已于是我的相对而言的最后一版出来了代码实施过程（我在函数内部有新建了一个函数，利用闭包来解决，缺点是当在网页上进行解析大数据量的数组时会导致内存的大量消耗）123456789101112131415161718192021222324252627282930 var flatten = function(input) &#123; if (isArray(input))&#123; var output = [] function _flatten (input) &#123; for(var i = 0; i &lt; input.length; i++)&#123; var value = input[i] if(isArray(input[i])) &#123; _flatten(input[i]) &#125; else&#123; output.push(value) &#125; &#125; &#125; _flatten(input) return output &#125;else &#123; return input; &#125;&#125;function isArray (input) &#123; if (Object.prototype.toString.call(input) === '[object Array]') &#123; return true &#125;else&#123; return false &#125;&#125;console.log(flatten([1,2,3,[7,[[8,9],10],[18,[545]]]]))运行结果 最后大家有更好的想法的话可以和我沟通，欢迎随时交流我的QQ ： 572712675微信欢迎扫我]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>工具函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用vue实现的todolist]]></title>
+    <url>%2F2017%2F08%2F20%2Fvue-todolist%2F</url>
+    <content type="text"><![CDATA[第一次真正意义上自己使用vue实现的一个小工具，目前正在完善 echozh Task Manager演示地址Task Manager 的链接.]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[我的解读之简述vue生命周期created、mounted(vue-1)]]></title>
+    <url>%2F2017%2F08%2F19%2FvueUnderstand%2F</url>
+    <content type="text"><![CDATA[其实对于vue我一直想写点什么，一直没时间，又一直不敢码字，生怕自己错解一些东西 echozh 说明：vue是我真正开始使用的一个前端的mvvm的框架附上一个Vue 的链接.我所希望的js的开发，就是面向对象的，而之前自己写的东西无外乎都是面向过程的，中途看过挺多的js的原型对象的讲解，但一直似懂非懂，知道接触vue之后的一段时间，才有所领会。 vue这个实例会挂载一个id，之后这个id的dom结构里面的所有操作都会在vue这个实例中进行，说到这就不得不贴出一张vue的生命周期的钩子图了在这个生命周期中我们就可以实现我们所有的操作，dom的改变，数据的渲染。 我觉得第一个需要了解的Vue实例的生命周期(就我自己的一点看法，各位如果有更好的理解，欢迎随时交流)写下几个我觉得新手比较需要的钩子1、created 类型 ：Function 详细 ： 实例已经创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测(data observer)，属性和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，$el属性目前不可见 我的理解 ： 这个时候我们可以准备我们所需要渲染到dom的数据，例如一些ajax的请求，但是这时Vue的虚拟dom还没挂载完成，$el无法访问，可以看下，下面的示例。 至于$el个人理解是vue的虚拟dom，会与实际dom的双向绑定。(或许有人会说现在我的dom既然可以拿到，为啥还要这么麻烦等待vue呢，对这样做是可以，但是那为啥还要使用vue，不就是为了更好的管理数据与dom吗，个人理解，不喜勿喷)。2、mounted 类型 ：Function 详细 ： el被新创建的vm.$el替换，并挂载到实例上去之后调用该钩子。如果root实例挂载了一个文档内元素，当mounted被调用时vm.$el也在文档内。 我的理解 ： 此时vue的虚拟dom已经完成，实际dom的绑定也已结束，至此我们可以使用vue实例对挂载点内的dom做任何操作， 可以看以下示例： 我们可以比较下他与实际dom之间的区别 以上内容纯属个人理解]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>unscramble</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo博文中插入图片存储的路径]]></title>
+    <url>%2F2017%2F08%2F18%2Fhexopicstor%2F</url>
+    <content type="text"><![CDATA[相信只要用过hexo的同学都会遇到博文中插入的图片在博文正文中路径错误问题 echozh 关于hexo生成的静态html页面的套路你知道吗首先这些生成的页面是按日期分类的 你最开始使用哪种方式存储图片的我觉得大部分人都是在source目录下建一个images文件夹来解决的，当然这可以解决你的一时的门面，但是当你阅读博文正文时就会发现，咦，怎么我的图片突然不能显示呢，这是一定的，因为在public静态资源目录下你的博文目录变了，自然就引用不到了 解决办法1、安装hexo-asset-image插件插件说明：安装插件后每新生成一个文章就会有一个相应的文件夹生成，如下我们只需放入我们的资源文件即可如果是已有的博文，可以手动在_posts目录下创建一个与博文同名的文件夹即可，然后放入资源文件第一步：到你的项目_config.yml文件中修改post_asset_folder属性为true第二步：安装hexo-asset-image到依赖中 1npm install hexo-asset-image --save第三步：使用插件的语法（这里会有一个要求hexo版本必须为hexo3及以上，如果不是就只能用markdown的语法，这样就很气了，因为用了markdown的语法我们的图片还是无法正常加载）第四步：重启服务，刷新页面（估计会有人发现，咦，怎么我用了插件还是无法正常显示图片，因为修改了配置文件，必须重启服务） 2、使用类似于七牛云等一些云储存平台来制作自己的图床，需要用的时候，引入外链即可]]></content>
+      <categories>
+        <category>picturestore</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git上传本地项目技巧（码云，github都可以用）]]></title>
+    <url>%2F2017%2F08%2F18%2Fgittrip%2F</url>
+    <content type="text"><![CDATA[以下操作均在windows环境中进行1、进入到要上传的项目目录首先我们需要进入到我们需要进行上传的目录下 2、用git命令初始化当前目录相信只要熟悉git的人都知道初始化的意义 3、配置全局的name和email（已配置过的可以跳过此步骤）user.name user.email 4、add要上传的文件add当前目录下的所有文件add当前目录下的单个文件 5、添加注释（个人建议不要添加中文注释） 6、将add的文件remote到原始仓库 7、按道理上来说的最后一步这个步骤可能会出现错误 如果有提示类似before push should ….pull等字样的错误时，我们需要先将仓库的版本拉取下来 这时如果出现类似refuse等字样时说明历史仓库版本不同，我们可以使用来强行合并仓库最后再push一遍就ok了]]></content>
+      <categories>
+        <category>git-trip</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端开发中最常用的8个npm技巧]]></title>
+    <url>%2F2017%2F08%2F03%2FnpmSkill%2F</url>
+    <content type="text"><![CDATA[npm javascript的包管理器 echozh 安安装包： 常规:1npm install pkg 速记:1npm i pkg 全安装包： 常规:1npm i --global pkg 速记:1npm i -g pkg 安包并包含在依赖中： 常规:1npm i --savepkg 速记:1npm i -S pkg 安包并包含在开发依赖中： 常规:1npm i --save-dev pkg 速记:1npm i -D pkg 下面开始有趣的内容 1、初始化一个新包我们都知道1npm init,用来创建一个新包。但是，所有问题都是匿名的，所以，我们可以用1npm init -y和1npm init -f回到初始化 2、运行测试命令1npm test可以简化为1npm t 3、枚举可用脚本我们运行1npm run可以得到一个的所有可用的脚本的列表 4、枚举已经安装的包使用1npm ls --depth 0枚举全局安装的包：使用1npm ls -g --depth 0 5、运行本地安装的可执行文件使用1npm run env如果你不知道本地安装的软件包放置可执行文件的地方可以运行1./node_modules/.bin/mocha 6、在网上查找你想要的包使用1npm repo在浏览器中查看还有1npm home命令进入主页如果想打开包的主页npmjs.com,可以使用1npm docs 7、在其他脚本前后运行脚本运行1pretest 8、修改包的版本运行1npm version通过1major,1minor或者1patch]]></content>
+      <categories>
+        <category>npm最常用的8个技巧</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[js闭包]]></title>
+    <url>%2F2017%2F07%2F30%2FjsClosure%2F</url>
+    <content type="text"><![CDATA[闭包让人既爱又恨，一方面喜欢她的变量局部化，一方面又害怕她的方向无法掌控 echozh 闭包解决经典的循环问题123456789101112131415&lt;!DOCTYPE html&gt;&lt;html&gt; &lt;head&gt; &lt;title&gt;&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;ul id="test" &gt; &lt;li&gt;&lt;/li&gt; &lt;li&gt;&lt;/li&gt; &lt;li&gt;&lt;/li&gt; &lt;li&gt;&lt;/li&gt; &lt;li&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/body&gt;&lt;/html&gt; 12345678910111213141516171819202122232425262728293031323334//原生JS实现类似于jquery的each方法var each = function(obj, callback) &#123; var type = (function() &#123; switch(obj.constructor) &#123; case Object: return 'Object'; break; case Array: return 'Array'; break; case NodeList: return 'NodeList'; break; default: return 'null'; break; &#125; &#125;)(); if(type === 'Array' || type === 'NodeList') &#123; //由于存在类数组NodeList,所以不能直接用every [].every.call(obj, function(v, i) &#123; return callback.call(v, i, v) === false ? false : true; &#125;); &#125; //为对象格式时返回key, value else if(type === 'Object') &#123; for(var i in obj )&#123; if(callback.call(obj[i], i, object[i]) === false) &#123; break; &#125; &#125; &#125;&#125; 单纯使用for循环12345678910var ul = document.getElementById('test');var ullist = ul.children;for(var i = 0;i&lt;ullist.length;i++)&#123; ullist[i].addEventListener('click', function() &#123; console.log(i); &#125;);&#125;//打印结果console : ullist 原因：由于执行顺序，最后打印的结果肯定是会ullist的长度 解决方案一： 内部使用闭包1234567for(var i = 0;i&lt;ullist.length;i++)&#123; (function (item) &#123; ullist[item].addEventListener('click', function() &#123; console.log(item); &#125;); &#125;)(i);&#125; 将i作为参数传入自执行函数，由于闭包会把当前传入的i贮存下来 解决方案二：使用上述的each回调，或者使用juqery的each就可以避免123each(ullist, function(i, v) &#123; console.log(i);&#125;) 还有很多其他的解决方案就不一一列举了，实现的方式都是大同小异，通过贮存当前变量的方案实现的]]></content>
+      <categories>
+        <category>protogenicJs</category>
+        <category>closure</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[原生ajax]]></title>
+    <url>%2F2017%2F07%2F30%2Fajax%2F</url>
+    <content type="text"><![CDATA[可能很多人已经习惯了jquery带给开发者的方便，但是我觉得熟练原生的js还是最好的 echozh ajax的原生写法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465function createXMLHTTPRequest() &#123; //1.创建XMLHttpRequest对象 //这是XMLHttpReuquest对象使用中最复杂的一步 //需要针对IE和其他类型的浏览器建立这个对象的不同方式写不同的代码 var xmlHttpRequest; if (window.XMLHttpRequest) &#123; //针对FireFox，Mozillar，Opera，Safari，IE7，IE8 xmlHttpRequest = new XMLHttpRequest(); //针对某些特定版本的mozillar浏览器的BUG进行修正 if (xmlHttpRequest.overrideMimeType) &#123; mlHttpRequest.overrideMimeType("text/xml"); &#125; &#125; else if (window.ActiveXObject) &#123; //针对IE6，IE5.5，IE5 //两个可以用于创建XMLHTTPRequest对象的控件名称，保存在一个js的数组中 //排在前面的版本较新 var activexName = [ "MSXML2.XMLHTTP", "Microsoft.XMLHTTP" ]; for ( var i = 0; i &lt; activexName.length; i++) &#123; try &#123; //取出一个控件名进行创建，如果创建成功就终止循环 //如果创建失败，回抛出异常，然后可以继续循环，继续尝试创建 xmlHttpRequest = new ActiveXObject(activexName[i]); if(xmlHttpRequest)&#123; break; &#125; &#125; catch (e) &#123; &#125; &#125; &#125; return xmlHttpRequest;&#125;function get()&#123; var req = createXMLHTTPRequest(); if(req)&#123; req.open("GET", "http://test.com/?keywords=手机", true); req.onreadystatechange = function()&#123; if(req.readyState == 4)&#123; if(req.status == 200)&#123; alert("success"); &#125;else&#123; alert("error"); &#125; &#125; &#125; req.send(null); &#125;&#125;function post()&#123; var req = createXMLHTTPRequest(); if(req)&#123; req.open("POST", "http://test.com/", true); req.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=gbk;"); req.send("keywords=手机"); req.onreadystatechange = function()&#123; if(req.readyState == 4)&#123; if(req.status == 200)&#123; alert("success"); &#125;else&#123; alert("error"); &#125; &#125; &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>protogenicJs</category>
+        <category>ajax</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+</search>
